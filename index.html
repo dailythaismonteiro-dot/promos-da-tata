@@ -46,18 +46,6 @@
   @media (prefers-reduced-motion:reduce){.cta{animation:none}}
   .mini{font-size:12px;color:var(--texto-leve);margin-top:12px}
 
-  .status{background:var(--card);border:1px solid var(--borda);border-radius:22px;padding:18px 18px 16px;margin:20px 0 0}
-  .live{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rosa-escuro);background:var(--bg);border:1px solid var(--borda);padding:5px 11px;border-radius:99px}
-  .ponto{width:7px;height:7px;border-radius:50%;background:var(--botao);flex:none;box-shadow:0 0 0 0 rgba(92,204,110,.6);animation:onda 1.6s ease-out infinite}
-  @keyframes onda{0%{box-shadow:0 0 0 0 rgba(92,204,110,.6)}100%{box-shadow:0 0 0 8px rgba(92,204,110,0)}}
-  .status-tit{font-size:21px;font-weight:800;color:var(--rosa);margin-top:12px;line-height:1.2}
-  .status-sub{font-size:15px;color:var(--texto);margin-top:4px}
-  .status-rod{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--borda);font-size:14px;font-weight:600;color:var(--rosa-escuro)}
-  .bolhas{display:flex}
-  .bolhas i{font-style:normal;width:28px;height:28px;border-radius:50%;background:var(--bg);border:2px solid var(--card);display:flex;align-items:center;justify-content:center;font-size:14px;margin-left:-8px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
-  .bolhas i:first-child{margin-left:0}
-  @media (prefers-reduced-motion:reduce){.ponto{animation:none}}
-
   .beneficios{display:grid;gap:8px;margin:24px 0;text-align:left}
   .ben{display:flex;align-items:center;gap:12px;font-size:14px;padding:12px 14px;border-radius:14px;border:1px solid var(--borda)}
   .ben i{font-style:normal;width:34px;height:34px;flex:none;border-radius:50%;background:var(--rosa-bg);display:flex;align-items:center;justify-content:center;font-size:17px}
@@ -96,17 +84,6 @@
   </a>
   <p class="mini">entrada na hora • sem custo • sai quando quiser</p>
 
-  <div class="status">
-    <span class="live"><span class="ponto"></span>novo grupo aberto</span>
-    <p class="status-tit">o último grupo lotou 🔥</p>
-    <p class="status-sub">acabamos de liberar mais um agora</p>
-    <div class="status-rod">
-      <span class="bolhas"><i>🏡</i><i>🛏️</i><i>🍽️</i></span>
-      <span id="membros">já somos +12 mil membros</span>
-    </div>
-  </div>
-
-
   <div class="beneficios">
     <div class="ben"><i>🔥</i><span>promoções novas todos os dias</span></div>
     <div class="ben"><i>🎟️</i><span>cupons e descontos relâmpago</span></div>
@@ -134,12 +111,10 @@
   // ===== EDITE AQUI =====
   const CONFIG = {
     linkGrupo: "https://chat.whatsapp.com/ElU2O0qd0NcIlpVtq0Ha8t?s=cl&p=i&mlu=4&ilr=4",
-    membros: "já somos +12 mil membros",
     foto: "data:image/webp;base64,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"
   };
   // ======================
   document.getElementById("cta").href = CONFIG.linkGrupo;
-  document.getElementById("membros").textContent = CONFIG.membros;
   if (CONFIG.foto) document.getElementById("avatar").innerHTML = '<img src="' + CONFIG.foto + '" alt="Tata" width="96" height="96">';
 </script>
 </body>
